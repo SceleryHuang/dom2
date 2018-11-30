@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var oTab = document.getElementById('tab1');
+            var oname = document.getElementById('name');
+            var oage = document.getElementById('age');
+            var oBtn = document.getElementById('btn');
+
+            oBtn.onclick = function () {
+                var otr = document.createElement('tr');
+
+                var otd = document.createElement('td');
+                otd.innerHTML = oTab.tBodies[0].rows.length+1;
+                otr.appendChild(otd);
+
+                var otd = document.createElement('td');
+                otd.innerHTML = oname.value;
+                otr.appendChild(otd);
+
+                var otd = document.createElement('td');
+                otd.innerHTML = oage.value;
+                otr.appendChild(otd);
+
+                oTab.tBodies[0].appendChild(otr);
+
+
+            };
+
+
+
+            for(var i = 0;i<oTab.tBodies[0].rows.length;i++){
+                var oldcolor = '';
+
+                oTab.tBodies[0].rows[i].onmouseover = function () {
+                    oldcolor = this.style.backgroundColor;
+                    this.style.background = 'yellow';
+                };
+                oTab.tBodies[0].rows[i].onmouseout = function () {
+
+                    this.style.background = oldcolor ;
+                };
+
+                if(i%2){
+                    oTab.tBodies[0].rows[i].style.background = "#ccc";
+                }else
+                {
+                    oTab.tBodies[0].rows[i].style.background = "";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+姓名：<input id = 'name' type="text" />
+年龄：<input id = 'age' type="text" />
+<input id = 'btn' type="button" value="添加">
+<table id = 'tab1' border="1px" width=500px">
+    <thead>
+        <td>ID</td>
+        <td>姓名</td>
+        <td>年龄</td>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>haha</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>huang</td>
+        <td>23</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>chengrb</td>
+        <td>66</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>nidaye</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>nidaye2</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>nidaye</td>
+        <td>22</td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
