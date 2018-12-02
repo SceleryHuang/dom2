@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sort</title>
+    <style>
+        #ul1{
+            background: aqua;
+        }
+        #ul2{
+            background: bisque;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var ul1 = document.getElementById('ul1');
+            var ul2 = document.getElementById('ul2');
+            var btn = document.getElementById('btn1');
+
+            btn.onclick = function () {
+                 var oli = ul1.children[0];
+
+                 ul1.removeChild(oli);
+                 ul2.appendChild(oli);
+            }
+
+        }
+
+
+
+    </script>
+</head>
+<body>
+<ul id = 'ul1'>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<input id = 'btn1' type="button" value="移动">
+<ul id = 'ul2'></ul>
+</body>
+</html>
